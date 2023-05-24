@@ -1,0 +1,259 @@
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+* {position: relative}
+
+body {
+    font-family: 'Nanum Gothic', sans-serif;
+    margin: 0 auto;
+    height: 100%;
+    box-sizing: border-box;
+}
+button {cursor: pointer;}
+textarea {font-family: 'NanumGothic';}
+input:focus, textarea:focus {outline: none;}
+
+.container {
+    width: 1200px;
+    float: left;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+header {
+    position: fixed;
+    z-index: 99;
+    background: #fff;
+    width: 100%;
+    left: 50%;
+    height: 80px;
+    transform: translateX(-50%);
+}
+header > .container {
+    height: 100%;
+}
+header > .container > .logo {
+    width: 150px;
+    height: 100%;
+    float: left;
+}
+header > .container > .logo > a > img {
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+header > .container > .menu {
+    height: 100%;
+    float: right;
+}
+header > .container  > .menu > a {
+    top: 40%;
+    margin-left: 20px;
+    color: black;
+    text-decoration-line : none;
+}
+
+/* -------------- search section --------------- */
+#search {
+    float: left;
+    height: 40px;
+    padding: 20px 0;
+    margin-top: 60px;
+    left: 50%;
+    background: #fff;
+    z-index: 99;
+    position: fixed;
+    transform: translateX(-50%);
+    border-bottom: solid 1px #d9d9d9;
+}
+#search > p {
+    float: left;
+    font-size: 20px;
+    line-height: 40px;
+    margin: 0 20px 0 0 ;
+    font-weight: bold;
+    color: #041552;
+}
+#search > input {
+    float: left;
+    padding: 0 20px;
+    width: 1050px;
+    height: 35px;
+    background: #f5f5f5;
+    border-radius: 10px;
+    border: solid #f5f5f5;
+}
+#search > button {
+    float: right;
+    border: none;
+    background: none;
+    height: 100%;
+}
+#search > button > i {
+    color: #041552;
+    font-size: 20px;
+}
+
+/* ----------------- create note ---------------- */
+#create_note {
+    margin-top: 150px;
+}
+#create_note input {
+    border: none;
+    font-weight: 700;
+    float: left;
+    font-size: 20px;
+    width: 150px;
+}
+#create_note > input:first-child {
+    font-size: 40px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+#create_note > .hashtag {
+    width: 100%;
+    float: left;
+}
+#create_note > .hashtag > .tag_box {
+    float: left;
+}
+#create_note > .hashtag > .tag_box > button {
+    padding: 0 20px;
+    border: none;
+    background: #041552;
+    color: #fff;
+    border-radius: 50px;
+    height: 27px;
+}
+#tool_bar {
+    background: #fff;
+    float: left;
+    margin-top: 70px;
+    position: fixed;
+    z-index: 99;
+    width: 100%;
+    border-bottom: solid 1px #d9d9d9;
+    padding: 10px 0;
+}
+#tool_bar > .container > button {
+    border: solid 1px #d9d9d9;
+    background: #fff;
+    border-radius: 5px;
+    padding: 5px 15px;
+}
+#create_note > textarea {
+    width: 100%;
+    margin-top: 30px;
+    border: none;
+    border-bottom: 1px solid #d9d9d9;
+    border-top: 1px solid #d9d9d9;
+    height: 400px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+#create_note > .button_box {
+    width: 100%;
+    margin-top: 20px;
+    border: none;
+    height: 100px;
+}
+#create_note > .button_box > button {
+    background: #041552;
+    border: none;
+    color: #fff;
+    width: 170px;
+    height: 40px;
+    font-size: 16px;
+    float: right;
+}
+
+/* =================== main =================*/
+#main {
+    margin-top: 150px;
+}
+#main > p {
+    font-weight: bold;
+    font-size: 35px;
+}
+#main > .mainList {
+    width: 100%;
+    float: left;
+}
+#main > .mainList > .newItem > a {
+    color: #d9d9d9;
+    line-height: 250px;
+    text-align: center;
+    font-size: 55px;
+}
+#main > .mainList > .newItem > a >i{
+    font-size: 55px;
+    color: #d9d9d9;
+}
+#main > .mainList > .mainItem {
+    width: calc(100% / 3 - 80px);
+    height: 230px;
+    padding: 20px 30px;
+    border: solid 1px #d9d9d9;
+    float: left;
+    margin-right: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+#main > .mainList > .mainItem:nth-child(3n) {
+    margin-right: 0;
+}
+#main > .mainList > .mainItem > p:first-child {
+    background: #041552;
+    width: 120px;
+    font-size: 14px;
+    height: 27px;
+    color: #fff;
+    line-height: 27px;
+    text-align: center;
+    border-radius: 5px;
+    float: left;
+}
+#main > .mainList > .mainItem > button {
+    float: right;
+    border: none;
+    background: none;
+    color: #041552;
+    font-size: 25px;
+}
+#main > .mainList > .mainItem > button.pin > i {
+    transform: rotate(30deg);
+}
+#main > .mainList > .mainItem > a {
+    font-size: 30px;
+    font-weight: 900;
+    float: left;
+    width: 100%;
+    color: #000;
+    text-decoration-line: none;
+}
+#main > .mainList > .mainItem > p.date {
+    color: #999;
+    font-size: 14px;
+    float: left;
+    width: 100%;
+}
+#main > .mainList > .mainItem > .hash {
+    width: 100%;
+    float: left;
+}
+#main > .mainList > .mainItem > .hash > span {
+    padding: 3px 20px;
+    margin-right: 10px;
+    background: #f1f1f1;
+    border-radius: 20px;
+    float: left;
+}
+#main > .mainList > .mainItem > button:last-child {
+    width: 100%;
+    border: solid 1px #041552;
+    border-radius: 10px;
+    background: #fff;
+    color: #041552;
+    margin-top: 10px;
+    padding: 0 20px;
+    height: 40px;
+    font-size: 16px;
+}

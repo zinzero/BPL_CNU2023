@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-gothic.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="changePasswdView.css">
+    <title>changePasswdView</title>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="mainpage.html">
+                    <img src="img/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="menu">
+                <a href="">필기 페이지</a>
+                <a href="">문제 페이지</a>
+                <a href="">공유 페이지</a>
+            </div>
+            <div class="hamburger">
+            </div>
+        </div>
+    </header>
+
+    <div class="changepasswd">
+        <h1>비밀번호 변경</h1>
+        <form method="post" action="" id="changepasswd-form">
+            <div class="content">
+                <img src="img/at.png">
+                <input type="email" name="userEmail" placeholder="">
+            </div>
+            <div class="content">
+                <img src="img/lock-outline.png">
+                <input type="password" name="userPassword" placeholder="현재 비밀번호를 입력해주세요">
+            </div>
+            <div class="content">
+                <img src="img/lock-reset.png">
+                <input type="password" name="newPassword" placeholder="새 비밀번호를 입력해주세요">
+            </div>
+            <div class="content">
+                <img src="img/lock-check-outline.png">
+                <input type="password" name="checkPassword" placeholder="새 비밀번호를 다시 입력해주세요">
+            </div>
+            <input type="submit" value="변경">
+            <input type="reset" value="취소">
+        </form>
+    </div>
+    
+</body>
+</html>

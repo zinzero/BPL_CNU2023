@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Blank Master</title>
+    <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-gothic.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="img/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="menu">
+                <a href="" style="font-weight: bold">나의 필기</a>
+                <a href="">나의 문제</a>
+                <a href="">모든 문제</a>
+            </div>
+            <div class="hamburger">
+            </div>
+        </div>
+    </header>
+    <div id="tool_bar" class="container">
+        <div class="container">
+            <button type="button"><i class="fa-solid fa-bold"></i></button>
+            <button type="button"><i class="fa-solid fa-italic"></i></button>
+            <button type="button"><i class="fa-solid fa-image"></i></button>
+            <button type="button"><i class="fa-solid fa-code"></i></button>
+            <button type="button"><i class="fa-solid fa-link"></i></button>
+        </div>
+    </div>
+<!--    <section id="search" class="container">-->
+<!--        <p>검색</p>-->
+<!--        <input type="text" placeholder="검색어를 입력해주세요.">-->
+<!--        <button type="button">-->
+<!--            <i class="fa-solid fa-magnifying-glass"></i>-->
+<!--        </button>-->
+<!--    </section>-->
+
+    <div id="create_note" class="container">
+        <input type="text" placeholder="제목 입력">
+        <div class="hashtag">
+            <input type="text" placeholder="해시태그 입력">
+            <div class="tag_box">
+                <button>#기초프로젝트랩</button>
+                <button>#javascript</button>
+                <button>#html</button>
+            </div>
+        </div>
+
+        <textarea name="create_note" id="create_note_ta" placeholder="내용을 입력하세요."></textarea>
+        <div class="button_box container">
+            <button type="submit">
+                필기 생성하기
+            </button>
+        </div>
+    </div>
+</body>
+</html>
