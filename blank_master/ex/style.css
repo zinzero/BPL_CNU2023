@@ -5,7 +5,6 @@ body {
     font-family: 'Nanum Gothic', sans-serif;
     margin: 0 auto;
     height: 100%;
-    box-sizing: border-box;
 }
 button {cursor: pointer;}
 textarea {font-family: 'NanumGothic';}
@@ -56,11 +55,7 @@ header > .container  > .menu > a {
     float: left;
     height: 40px;
     padding: 20px 0;
-    margin-top: 60px;
     left: 50%;
-    background: #fff;
-    z-index: 99;
-    position: fixed;
     transform: translateX(-50%);
     border-bottom: solid 1px #d9d9d9;
 }
@@ -163,97 +158,4 @@ header > .container  > .menu > a {
     height: 40px;
     font-size: 16px;
     float: right;
-}
-
-/* =================== main =================*/
-#main {
-    margin-top: 150px;
-}
-#main > p {
-    font-weight: bold;
-    font-size: 35px;
-}
-#main > .mainList {
-    width: 100%;
-    float: left;
-}
-#main > .mainList > .newItem > a {
-    color: #d9d9d9;
-    line-height: 250px;
-    text-align: center;
-    font-size: 55px;
-}
-#main > .mainList > .newItem > a >i{
-    font-size: 55px;
-    color: #d9d9d9;
-}
-#main > .mainList > .mainItem {
-    width: calc(100% / 3 - 80px);
-    height: 230px;
-    padding: 20px 30px;
-    border: solid 1px #d9d9d9;
-    float: left;
-    margin-right: 20px;
-    border-radius: 5px;
-    margin-bottom: 20px;
-}
-#main > .mainList > .mainItem:nth-child(3n) {
-    margin-right: 0;
-}
-#main > .mainList > .mainItem > p:first-child {
-    background: #041552;
-    width: 120px;
-    font-size: 14px;
-    height: 27px;
-    color: #fff;
-    line-height: 27px;
-    text-align: center;
-    border-radius: 5px;
-    float: left;
-}
-#main > .mainList > .mainItem > button {
-    float: right;
-    border: none;
-    background: none;
-    color: #041552;
-    font-size: 25px;
-}
-#main > .mainList > .mainItem > button.pin > i {
-    transform: rotate(30deg);
-}
-#main > .mainList > .mainItem > a {
-    font-size: 30px;
-    font-weight: 900;
-    float: left;
-    width: 100%;
-    color: #000;
-    text-decoration-line: none;
-}
-#main > .mainList > .mainItem > p.date {
-    color: #999;
-    font-size: 14px;
-    float: left;
-    width: 100%;
-}
-#main > .mainList > .mainItem > .hash {
-    width: 100%;
-    float: left;
-}
-#main > .mainList > .mainItem > .hash > span {
-    padding: 3px 20px;
-    margin-right: 10px;
-    background: #f1f1f1;
-    border-radius: 20px;
-    float: left;
-}
-#main > .mainList > .mainItem > button:last-child {
-    width: 100%;
-    border: solid 1px #041552;
-    border-radius: 10px;
-    background: #fff;
-    color: #041552;
-    margin-top: 10px;
-    padding: 0 20px;
-    height: 40px;
-    font-size: 16px;
 }

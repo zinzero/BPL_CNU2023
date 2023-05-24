@@ -11,56 +11,143 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div class="logo">
-                <a href="index.html">
-                    <img src="img/logo.png" alt="logo">
-                </a>
-            </div>
-            <div class="menu">
-                <a href="" style="font-weight: bold">나의 필기</a>
-                <a href="">나의 문제</a>
-                <a href="">모든 문제</a>
-            </div>
-            <div class="hamburger">
-            </div>
+<header>
+    <div class="container">
+        <div class="logo">
+            <a href="index.html">
+                <img src="img/logo.png" alt="logo">
+            </a>
         </div>
-    </header>
-    <div id="tool_bar" class="container">
-        <div class="container">
-            <button type="button"><i class="fa-solid fa-bold"></i></button>
-            <button type="button"><i class="fa-solid fa-italic"></i></button>
-            <button type="button"><i class="fa-solid fa-image"></i></button>
-            <button type="button"><i class="fa-solid fa-code"></i></button>
-            <button type="button"><i class="fa-solid fa-link"></i></button>
+        <div class="menu">
+            <a href="" style="font-weight: bold">나의 필기</a>
+            <a href="">나의 문제</a>
+            <a href="">모든 문제</a>
+        </div>
+        <div class="hamburger">
         </div>
     </div>
-<!--    <section id="search" class="container">-->
-<!--        <p>검색</p>-->
-<!--        <input type="text" placeholder="검색어를 입력해주세요.">-->
-<!--        <button type="button">-->
-<!--            <i class="fa-solid fa-magnifying-glass"></i>-->
-<!--        </button>-->
-<!--    </section>-->
-
-    <div id="create_note" class="container">
-        <input type="text" placeholder="제목 입력">
-        <div class="hashtag">
-            <input type="text" placeholder="해시태그 입력">
-            <div class="tag_box">
-                <button>#기초프로젝트랩</button>
-                <button>#javascript</button>
-                <button>#html</button>
+</header>
+    <section id="search" class="container">
+        <p>검색</p>
+        <input type="text" placeholder="검색어를 입력해주세요.">
+        <button type="button">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+    </section>
+    <div id="main" class="container">
+        <p>나의 필기</p>
+        <div class="mainList">
+            <div class="mainItem newItem">
+                <a href=""><i class="fa-sharp fa-solid fa-plus"></i></a>
             </div>
-        </div>
-
-        <textarea name="create_note" id="create_note_ta" placeholder="내용을 입력하세요."></textarea>
-        <div class="button_box container">
-            <button type="submit">
-                필기 생성하기
+            <div class="mainItem">
+                <p><i class="fa-solid fa-circle-check"></i> 문제 생성완료</p>
+                <button class="pin">
+                    <i class="fa-solid fa-thumbtack"></i>
+                </button>
+                <a href="" class="title">기초프로젝트랩</a>
+                <p class="date">2023.04.17</p>
+                <div class="hash">
+                    <span>#css</span>
+                    <span>#Toyproject</span>
+                </div>
+                <button>
+                    필기로 바로가기 <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+            <div class="mainItem">
+                <p><i class="fa-solid fa-circle-check"></i> 문제 생성완료</p>
+                <button class="pin">
+                    <i class="fa-solid fa-thumbtack"></i>
+                </button>
+                <a href="" class="title">기초프로젝트랩</a>
+                <p class="date">2023.04.17</p>
+                <div class="hash">
+                    <span>#css</span>
+                    <span>#Toyproject</span>
+                </div>
+                <button>
+                    필기로 바로가기 <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+            <div class="mainItem">
+                <p><i class="fa-solid fa-circle-check"></i> 문제 생성완료</p>
+                <button class="pin">
+                    <i class="fa-solid fa-thumbtack"></i>
+                </button>
+                <a href="" class="title">기초프로젝트랩</a>
+                <p class="date">2023.04.17</p>
+                <div class="hash">
+                    <span>#css</span>
+                    <span>#Toyproject</span>
+                </div>
+                <button>
+                    필기로 바로가기 <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+            <div class="mainItem">
+                <p><i class="fa-solid fa-circle-check"></i> 문제 생성완료</p>
+                <button class="pin">
+                    <i class="fa-solid fa-thumbtack"></i>
+                </button>
+                <a href="" class="title">기초프로젝트랩</a>
+                <p class="date">2023.04.17</p>
+                <div class="hash">
+                    <span>#css</span>
+                    <span>#Toyproject</span>
+                </div>
+                <button>
+                    필기로 바로가기 <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>            <div class="mainItem">
+            <p><i class="fa-solid fa-circle-check"></i> 문제 생성완료</p>
+            <button class="pin">
+                <i class="fa-solid fa-thumbtack"></i>
+            </button>
+            <a href="" class="title">기초프로젝트랩</a>
+            <p class="date">2023.04.17</p>
+            <div class="hash">
+                <span>#css</span>
+                <span>#Toyproject</span>
+            </div>
+            <button>
+                필기로 바로가기 <i class="fa-solid fa-arrow-right"></i>
             </button>
         </div>
+            <div class="mainItem">
+                <p><i class="fa-solid fa-circle-check"></i> 문제 생성완료</p>
+                <button class="pin">
+                    <i class="fa-solid fa-thumbtack"></i>
+                </button>
+                <a href="" class="title">기초프로젝트랩</a>
+                <p class="date">2023.04.17</p>
+                <div class="hash">
+                    <span>#css</span>
+                    <span>#Toyproject</span>
+                </div>
+                <button>
+                    필기로 바로가기 <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+            <div class="mainItem">
+                <p><i class="fa-solid fa-circle-check"></i> 문제 생성완료</p>
+                <button class="pin">
+                    <i class="fa-solid fa-thumbtack"></i>
+                </button>
+                <a href="" class="title">기초프로젝트랩</a>
+                <p class="date">2023.04.17</p>
+                <div class="hash">
+                    <span>#css</span>
+                    <span>#Toyproject</span>
+                </div>
+                <button>
+                    필기로 바로가기 <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+
+        </div>
     </div>
+
+</div>
 </body>
 </html>
