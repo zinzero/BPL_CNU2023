@@ -1,5 +1,5 @@
 @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
-* {position: relative}
+* {position: relative; box-sizing: border-box}
 
 body {
     font-family: 'Nanum Gothic', sans-serif;
@@ -50,13 +50,116 @@ header > .container  > .menu > a {
     color: black;
     text-decoration-line : none;
 }
+header > .container  > .hamburger {
+    float: right;
+    margin-left: 20px;
+    height: 100%;
+}
+header > .container  > .hamburger > i {
+    font-size: 30px;
+    line-height: 80px;
+    cursor: pointer;
+}
+/* ------------------ ham -------------------------- */
+#ham {
+    display: none;
+    width: 300px;
+    height: 100%;
+    position: fixed;
+    z-index: 100;
+    background: #fff;
+    border: solid 1px #d9d9d9;
+    right: 0;
+}
+#ham > .cancel {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    color: #999999;
+    z-index: 1;
+}
+#ham > .logo {
+    width: 100%;
+    height: 100px;
+    border-bottom: solid 1px #d9d9d9;
+}
+#ham > .logo > img {
+    width: 60%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+#ham > .profile {
+    width: 100%;
+    border-bottom: 1px solid #d9d9d9;
+    height: 210px;
+    float: left;
+}
+#ham > .profile > .profile_img {
+    width: 30%;
+    float: left;
+    height: 100%;
+}
+#ham > .profile > .profile_img > i {
+    font-size: 50px;
+    color: #041552;
+    float: right;
+    margin-top: 30px;
+    margin-right: 15px;
+}
+#ham > .profile > .profile_content {
+    width: 70%;
+    float: right;
+}
+#ham > .profile > .profile_content > p:nth-child(1) {
+    margin-top: 30px;
+    font-size: 22px;
+    font-weight: 900;
+    width: 100%;
+    float: left;
+    margin-bottom: 0;
+}
+#ham > .profile > .profile_content > p:nth-child(2) {
+    width: 100%;
+    float: left;
+    font-size: 14px;
+    color: #999999;
+    margin-top: 5px;
+}
+#ham > .profile > .profile_content > p:nth-child(3) {
+    margin-bottom: 0;
+    font-weight: bold;
+}
+#ham > .profile > .profile_content > p:nth-child(4) {
+    margin-top: 5px;
+    font-size: 14px;
+}
+#ham > .hashtag {
+    width: 100%;
+    float: left;
+    padding: 30px;
+}
+#ham > .hashtag > .hashtag_item {
+    width: 100%;
+    border: solid 1px #041552;
+    border-radius: 5px;
+    padding: 10px 20px;
+    float: left;
+    margin-bottom: 10px;
+    color: #041552;
+    cursor: pointer;;
+}
+#ham > .hashtag > .hashtag_item > span {
+    font-weight: bold;
+}
 
 /* -------------- search section --------------- */
 #search {
     float: left;
-    height: 40px;
-    padding: 20px 0;
-    margin-top: 60px;
+    height: 50px;
+    margin-top: 80px;
     left: 50%;
     background: #fff;
     z-index: 99;
@@ -188,8 +291,8 @@ header > .container  > .menu > a {
     color: #d9d9d9;
 }
 #main > .mainList > .mainItem {
-    width: calc(100% / 3 - 80px);
-    height: 230px;
+    width: calc(100% / 3 - 20px);
+    height: 250px;
     padding: 20px 30px;
     border: solid 1px #d9d9d9;
     float: left;
