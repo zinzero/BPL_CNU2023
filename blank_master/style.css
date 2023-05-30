@@ -349,7 +349,7 @@ header > .container  > .hamburger > i {
     border-radius: 20px;
     float: left;
 }
-#main > .mainList > .mainItem > button:last-child {
+#main > .mainList > .mainItem > a:last-child {
     width: 100%;
     border: solid 1px #041552;
     border-radius: 10px;
@@ -357,6 +357,12 @@ header > .container  > .hamburger > i {
     color: #041552;
     margin-top: 10px;
     padding: 0 20px;
+    font-weight: bold;
     height: 40px;
+    line-height: 40px;
     font-size: 16px;
+}
+#main > .mainList > .newItem > a:last-child {
+    border: none;
+    line-height: 210px;
 }

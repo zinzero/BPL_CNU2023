@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>noteModify</title>
+    <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-gothic.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="mainpage.html">
+                    <img src="../img/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="menu">
+                <a href="" style="font-weight: bold">필기 페이지</a>
+                <a href="">문제 페이지</a>
+                <a href="">공유 페이지</a>
+            </div>
+            <div class="hamburger">
+            </div>
+        </div>
+    </header>
+    <div id="tool_bar" class="container">
+        <div class="container">
+            <button type="button"><i class="fa-solid fa-bold"></i></button>
+            <button type="button"><i class="fa-solid fa-italic"></i></button>
+            <button type="button"><i class="fa-solid fa-image"></i></button>
+            <button type="button"><i class="fa-solid fa-code"></i></button>
+            <button type="button"><i class="fa-solid fa-link"></i></button>
+        </div>
+    </div>
+    <div id="create_note" class="container">
+        <input type="text" placeholder="제목 입력" value="데이터 통신 - Network">
+        <div class="hashtag">
+            <input type="text" placeholder="해시태그 입력">
+            <div class="tag_box">
+                <button>#javascript</button>
+                <button>#html</button>
+            </div>
+        </div>
+
+        <textarea name="create_note" id="create_note_ta" placeholder="내용을 입력하세요.">
+            - trace 07 : 두 개의 background 작업을 실행한 후, built-in 명령어 ‘jobs’를 실행하면 현재 실행되고 있는 작업의 리스트를 출력해주는 문제
+            ![](https://velog.velcdn.com/images/jmink002/post/96720a45-bb4b-4d3b-8cbf-46f685a2c251/image.png)
+            trace07은 다음과 같은 흐름으로 작동한다.
+
+            ![](https://velog.velcdn.com/images/jmink002/post/8b9519ca-2265-42eb-a71f-b4de11354211/image.png)
+            trace 01 문제였던 ‘quit’ 명령어와 같은 built-in 명령어이기 때문에 builtin_cmd() 함수안에서 기능을 수행해주면 된다.
+
+            shell을 실행한 후 command를 입력받는다. (이번 trace에서는 built-in 명령어인 ‘jobs’를 입력받기 때문에 builtin 명령어가 입력된다고 생각한다.) 그 후 입력받은 command가 builtin command인지 확인하고 ‘jobs’는 builtin command이므로 eval() 함수의 if문 안에 있는 fork() 등의 모든 기능을 수행하지 않고, builtin_cmd()만이 수행되게 된다.
+            ![](https://velog.velcdn.com/images/jmink002/post/2113ad4e-2a78-4632-a383-c2eb2e918c0d/image.png)
+
+            builtin_cmd() 에서는 ‘quit’와 같이 입력받은 command가 ‘jobs’와 같다면 작업의 리스트를 출력해주는 listjobs() 함수를 실행하고 1을 return해줘서 eval() 함수로 돌아갔을 때 조건문에 들어가지 않고 종료시킨 뒤 command 입력을 다시 기다리도록 하였다.
+            ![](https://velog.velcdn.com/images/jmink002/post/513caa34-3250-47b6-a70e-9fc8618cd94b/image.png)
+
+            작업의 list를 출력해주는 listjobs() 함수는 (jobs, output file descriptor) 이렇게 두 개의 인자를 받는다. jobs는 작업들을 넣어주고, output file descriptor는 출력 파일에 접근할 때 사용하는 값이다. 이 값이 “STDOUT_FILENO” 로 정의되어있는데 listjobs의 인자로 “STDOUT_FILINO”를 넣어주어 표준출력파일에 접근하도록 하였다.
+            이렇게 builtin_cmd() 함수에 “jobs” command의 기능을 구현해 trace 07을 해결했다.
+        </textarea>
+        <div class="button_box container">
+            <button type="submit" onclick="location.href='noteView.html'">
+                수정 완료하기
+            </button>
+        </div>
+    </div>
+    
+</body>
+</html>

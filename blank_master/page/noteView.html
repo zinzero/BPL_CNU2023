@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>필기페이지</title>
+    <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-gothic.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+    <script src="../js/app.js"></script>
+    <script type="text/javascript" src="../js/texthighlighter/build/TextHighlighter.min.js"></script>
+    <link rel="stylesheet" href="../css/noteModify.css">
+</head>
+<body>
+<header>
+    <div class="container">
+        <div class="logo">
+            <a href="../index.html">
+                <img src="../img/logo.png" alt="logo">
+            </a>
+        </div>
+        <div class="hamburger">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+        <div class="menu">
+            <a href="../index.html" style="font-weight: bold">필기페이지</a>
+            <a href="quizpage.html">문제페이지</a>
+            <a href="">공유페이지</a>
+        </div>
+    </div>
+</header>
+<section id="ham">
+        <span class="cancel">
+            <i class="fa-solid fa-xmark"></i>
+        </span>
+    <div class="logo">
+        <img src="../img/logo.png" alt="logo">
+    </div>
+    <div class="profile">
+        <div class="profile_img">
+            <i class="fa-solid fa-circle-user"></i>
+        </div>
+        <div class="profile_content">
+            <p>홍길동</p>
+            <p>abcd@gmail.com</p>
+            <p>충남대학교</p>
+            <p>컴퓨터융합학부</p>
+            <p>안녕하세요, 홍길동입니다!<br>잘부탁드립니다!</p>
+        </div>
+    </div>
+    <div class="hashtag">
+        <div class="hashtag_item">
+            <i class="fa-solid fa-hashtag"></i>
+            <span>2023</span>
+        </div>
+        <div class="hashtag_item">
+            <i class="fa-solid fa-hashtag"></i>
+            <span>기초프로젝트랩</span>
+        </div>
+        <div class="hashtag_item">
+            <i class="fa-solid fa-hashtag"></i>
+            <span>프로젝트</span>
+        </div>
+    </div>
+</section>
+<div id="note-view" class="container note-view" >
+    <h1>데이터 통신 - Network</h1>
+    <div class="tag_box">
+        <button>#javascript</button>
+        <button>#html</button>
+        <div class="note-view-stork"></div>
+    </div>
+    <div class="content">
+        <p id="note-view-content-p">
+            - trace 07 : 두 개의 background 작업을 실행한 후, built-in 명령어 ‘jobs’를 실행하면 현재 실행되고 있는 작업의 리스트를 출력해주는 문제
+            ![](https://velog.velcdn.com/images/jmink002/post/96720a45-bb4b-4d3b-8cbf-46f685a2c251/image.png)
+            <br><br>
+            trace07은 다음과 같은 흐름으로 작동한다.
+            ![](https://velog.velcdn.com/images/jmink002/post/8b9519ca-2265-42eb-a71f-b4de11354211/image.png)
+            <br><br>
+            trace 01 문제였던 ‘quit’ 명령어와 같은 built-in 명령어이기 때문에 builtin_cmd() 함수안에서 기능을 수행해주면 된다.
+            <br><br>
+            shell을 실행한 후 command를 입력받는다. (이번 trace에서는 built-in 명령어인 ‘jobs’를 입력받기 때문에 builtin 명령어가 입력된다고 생각한다.) 그 후 입력받은 command가 builtin command인지 확인하고 ‘jobs’는 builtin command이므로 eval() 함수의 if문 안에 있는 fork() 등의 모든 기능을 수행하지 않고, builtin_cmd()만이 수행되게 된다.
+            ![](https://velog.velcdn.com/images/jmink002/post/2113ad4e-2a78-4632-a383-c2eb2e918c0d/image.png)
+            <br><br>
+            builtin_cmd() 에서는 ‘quit’와 같이 입력받은 command가 ‘jobs’와 같다면 작업의 리스트를 출력해주는 listjobs() 함수를 실행하고 1을 return해줘서 eval() 함수로 돌아갔을 때 조건문에 들어가지 않고 종료시킨 뒤 command 입력을 다시 기다리도록 하였다.
+            ![](https://velog.velcdn.com/images/jmink002/post/513caa34-3250-47b6-a70e-9fc8618cd94b/image.png)
+            <br><br>
+            작업의 list를 출력해주는 listjobs() 함수는 (jobs, output file descriptor) 이렇게 두 개의 인자를 받는다. jobs는 작업들을 넣어주고, output file descriptor는 출력 파일에 접근할 때 사용하는 값이다. 이 값이 “STDOUT_FILENO” 로 정의되어있는데 listjobs의 인자로 “STDOUT_FILINO”를 넣어주어 표준출력파일에 접근하도록 하였다.
+            이렇게 builtin_cmd() 함수에 “jobs” command의 기능을 구현해 trace 07을 해결했다.
+        </p>
+    </div>
+    <div class="problems">
+        <div class="problem-item">
+            <p>1번 문제</p>
+            <input type="text" placeholder="답을 입력해주세요.">
+            <button class="problem-item-check">채점하기</button>
+            <i class="fa-solid fa-check"></i>
+        </div>
+    </div>
+    <div class="buttons">
+        <button id="note-view-modify-btn" onclick="location.href='noteModify.html'">
+            필기 수정하기
+        </button>
+        <button id="note-view-makequiz">
+            문제 생성하기
+        </button>
+    </div>
+</div>
+
+</body>
+</html>
