@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>채팅 웹사이트</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    #chat-container {
+      width: 500px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #f6f6f6;
+    }
+
+    #message-area {
+      height: 300px;
+      overflow-y: scroll;
+      margin-bottom: 20px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      background-color: #fff;
+    }
+
+    .message {
+      margin-bottom: 10px;
+    }
+
+    .message .sender {
+      font-weight: bold;
+    }
+
+    .input-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .input-container input[type="text"] {
+      flex-grow: 1;
+      width: 100%;
+      padding: 5px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      margin-right: 5px;
+    }
+
+    .input-container input[type="submit"] {
+      padding: 5px 10px;
+      border: none;
+      border-radius: 3px;
+      background-color: #4CAF50;
+      color: #fff;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div id="chat-container">
+    <div id="friend-list">
+      <ul>
+        <li onclick="selectFriend(this, 'friend1')">친구1</li>
+        <li onclick="selectFriend(this, 'friend2')">친구2</li>
+        <li onclick="selectFriend(this, 'friend3')">친구3</li>
+      </ul>
+    </div>
+    <div id="message-area"></div>
+    <div class="input-container">
+      <input type="text" id="message-input" placeholder="메시지를 입력하세요">
+      <input type="submit" value="전송" id="send-button">
+    </div>
+  </div>
+
+  <script>
+    // 메시지 전송 버튼 클릭 이벤트 핸들러
+    document.getElementById('send-button').addEventListener('click', function() {
+      sendMessage();
+    });
+
+    // 입력창에서 엔터키를 누를 때 메시지 전송
+    document.getElementById('message-input').addEventListener('keypress', function(event) {
+      if (event.keyCode === 13) {
+        sendMessage();
+      }
+    });
+
+    // 메시지 전송 함수
+    function sendMessage() {
+      var messageInput = document.getElementById('message-input');
+      var messageArea = document.getElementById('message-area');
+
+      var message = messageInput.value;
+      if (message.trim() !== '') {
+        var sender = '나'; // 본인 이름
+        var messageElement = document.createElement('div');
+        messageElement.classList.add('message');
+        messageElement.innerHTML = '<span class="sender">' + sender + ': </span>' + message;
+        messageArea.appendChild(messageElement);
+
+        // 입력창 비우기
+        messageInput.value = '';
+
+        // 채팅 영역 스크롤 맨 아래로 이동
+        messageArea.scrollTop = messageArea.scrollHeight;
+      }
+    }
+  </script>
+</body>
+</html>
