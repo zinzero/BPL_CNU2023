@@ -1,0 +1,3 @@
+[submodule "BPL_CNU2023/blank_master/js"]
+	path = BPL_CNU2023/blank_master/js
+	url = https://github.com/mir3z/texthighlighter.git
