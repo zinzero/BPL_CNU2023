@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>필기페이지</title>
+    <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-gothic.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+    <script src="../js/app.js"></script>
+    <script type="text/javascript" src="../js/texthighlighter/build/TextHighlighter.min.js"></script>
+    <link rel="stylesheet" href="../css/share.css">
+
+</head>
+<body>
+<header>
+    <div class="container">
+        <div class="logo">
+            <a href="../index.html">
+                <img src="../img/logo.png" alt="logo">
+            </a>
+        </div>
+        <div class="hamburger">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+        <div class="menu">
+            <a href="../index.html" style="font-weight: bold">필기페이지</a>
+            <a href="quizpage.html">문제페이지</a>
+            <a href="share.html">공유페이지</a>
+        </div>
+    </div>
+</header>
+<section id="ham">
+        <span class="cancel">
+            <i class="fa-solid fa-xmark"></i>
+        </span>
+    <div class="logo">
+        <img src="../img/logo.png" alt="logo">
+    </div>
+    <div class="profile">
+        <div class="profile_img">
+            <i class="fa-solid fa-circle-user"></i>
+        </div>
+        <div class="profile_content">
+            <p>홍길동</p>
+            <p>abcd@gmail.com</p>
+            <p>충남대학교</p>
+            <p>컴퓨터융합학부</p>
+            <p>안녕하세요, 홍길동입니다!<br>잘부탁드립니다!</p>
+        </div>
+    </div>
+    <div class="hashtag">
+        <div class="hashtag_item">
+            <i class="fa-solid fa-hashtag"></i>
+            <span>2023</span>
+        </div>
+        <div class="hashtag_item">
+            <i class="fa-solid fa-hashtag"></i>
+            <span>기초프로젝트랩</span>
+        </div>
+        <div class="hashtag_item">
+            <i class="fa-solid fa-hashtag"></i>
+            <span>프로젝트</span>
+        </div>
+    </div>
+</section>
+<!--<div class="navbar">-->
+<!--    <div class="logo">-->
+<!--        <img src="../img/logo.png" alt="logo">-->
+<!--    </div>-->
+<!--    <div class="menu">-->
+<!--        <a href="../index.html">필기페이지</a>-->
+<!--        <a href="quizpage.html">문제페이지</a>-->
+<!--        <a href="#" style="font-weight: bold">공유페이지</a>-->
+<!--    </div>-->
+<!--    <div class="hamburger">&#9776;</div>-->
+<!--</div>-->
+
+<div id="chat-container">
+    <div id="friend-list">
+        <div>
+            <h4 style="margin-top:10px">친구 목록</h4>
+            <div class="add_person">
+                <img src="../img/add.png" alt="add_person">
+            </div>
+        </div>
+        <div class="search-bar">
+            <div class="search-img">
+                <img src="../img/search.png">
+            </div>
+            <input type="text" id="search-input" placeholder="친구 검색">
+        </div>
+        <ul>
+            <div class="friend">
+                <button class="selected-friend-button" onclick="location.href =  '1.html';">
+                    전규리
+                    <div class="user">
+                        <img src="../img/user.png" class="user">
+                    </div>
+                </button>
+                <button class="friend-button" onclick="location.href =  '2.html';">
+                    장진영
+                    <div class="user">
+                        <img src="../img/user.png" class="user">
+                    </div>
+                </button>
+                <button class="friend-button" onclick="location.href =  '3.html';">
+                    도주선
+                    <div class="user">
+                        <img src="../img/user.png" class="user">
+                    </div>
+                </button>
+                <button class="friend-button" onclick="location.href =  '4.html';">
+                    정민경
+                    <div class="user">
+                        <img src="../img/user.png" class="user">
+                    </div>
+                </button>
+                <button class="friend-button" onclick="location.href =  '5.html';">
+                    한승우
+                    <div class="user">
+                        <img src="../img/user.png" class="user">
+                    </div>
+                </button>
+            </div>
+        </ul>
+    </div>
+    <div class="chat-search">
+        <img src="../img/search.png" class="chat-search-img">
+        <input style="padding-left:15px;font-size:20px;" type="text" id="chat-search-input" placeholder="채팅 내용 검색">
+    </div>
+    <div id="message-area">
+    </div>
+    <div class="input-container">
+        <input style="padding-left:15px;font-size:20px;" type="text" id="message-input" placeholder="메시지를 입력하세요">
+        <input type="submit" value="전송" id="send-button">
+    </div>
+</div>
+
+<script>
+    var selectedFriend = null; // 선택된 친구 초기화
+    var friendList = document.querySelectorAll('.friend-button,.selected-friend-button');
+    // 친구 선택 함수
+    function selectFriend(friend) {
+        selectedFriend = friend;
+        //   window.alert("현재 선택된 친구:"+selectedFriend);
+        var friendList = document.querySelectorAll('.friend-button,.selected-friend-button');
+
+        // 선택된 친구 표시
+        //   friendList.forEach(function (item) {
+        //     item.classList.remove('selected');
+        //   });
+        //   friend.classList.add('selected');
+
+        // 선택된 친구의 채팅 내용 표시
+        displayChat(selectedFriend);
+    }
+
+    // 메시지 전송 버튼 클릭 이벤트 핸들러
+    document.getElementById('send-button').addEventListener('click', function() {
+        sendMessage();
+    });
+
+    // 입력창에서 엔터키를 누를 때 메시지 전송
+    document.getElementById('message-input').addEventListener('keypress', function (event) {
+        if (event.keyCode === 13) {
+            sendMessage();
+        }
+    });
+
+    // 메시지 전송 함수
+    function sendMessage() {
+        var messageInput = document.getElementById('message-input');
+        var messageArea = document.getElementById('message-area');
+
+        var message = messageInput.value;
+        if (message.trim() !== '') {
+            var sender = ''; // 본인 이름
+            var messageElement = document.createElement('div');
+            messageElement.classList.add('message', 'sender');
+            messageElement.innerHTML =
+                '<span class="sender-name">' + sender + '</span><span class="message-content">' + message + '</span>';
+            messageArea.appendChild(messageElement);
+
+            // 입력창 비우기
+            messageInput.value = '';
+
+            // 채팅 영역 스크롤 맨 아래로 이동
+            messageArea.scrollTop = messageArea.scrollHeight;
+        }
+    }
+    function searchFriends() {
+        var input = document.getElementById('search-input');
+        var filter = input.value.toUpperCase();
+        var friendList = document.querySelectorAll('.friend-button,.selected-friend-button');
+
+        // 각 친구 항목을 검색하여 일치하는 항목만 표시
+        friendList.forEach(function (friend) {
+            var name = friend.textContent.toUpperCase();
+            if (name.indexOf(filter) > -1) {
+                friend.style.display = '';
+            } else {
+                friend.style.display = 'none';
+            }
+        });
+    }
+
+    // 검색 바 이벤트 핸들러
+    document.getElementById('search-input').addEventListener('input', function() {
+        searchFriends();
+    });
+
+    //채팅 검색
+    function searchChat() {
+        var input = document.getElementById('chat-search-input');
+        var filter = input.value.toLowerCase();
+        var messages = document.querySelectorAll('.message-content');
+
+        // 각 메시지를 검색하여 일치하는 메시지만 표시
+        messages.forEach(function (message) {
+            var content = message.textContent.toLowerCase();
+            var messageElement = message.parentElement;
+            if (content.includes(filter)) {
+                messageElement.style.display = '';
+            } else {
+                messageElement.style.display = 'none';
+            }
+        });
+    }
+
+    // 채팅 검색 입력창 엔터키 이벤트 핸들러
+    document.getElementById('chat-search-input').addEventListener('keypress', function(event) {
+        if (event.key === 'Enter') {
+            searchChat();
+        }
+    });
+</script>
+</body>
+</html>

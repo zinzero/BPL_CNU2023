@@ -1,0 +1,355 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: white;
+    margin: 0;
+}
+
+.navbar {
+    background-color: #fff;
+    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #d9d9d9;
+}
+
+.navbar .logo {
+    color: #333;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.navbar .logo img {
+    margin-left: 20px;
+    width: 200px;
+}
+
+.navbar .hamburger {
+    display: none;
+    color: #333;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.menu a {
+    text-decoration-line: none;
+    color: black;
+    font-size: 15px;
+    margin-left: 20px;
+}
+
+@media (max-width: 768px) {
+    .navbar .hamburger {
+        display: block;
+    }
+
+    .navbar .menu {
+        display: none;
+    }
+}
+
+#chat-container {
+    display: flex;
+    width: 1000px; /* Adjust the width as per your preference */
+    height: 600px;
+    margin: 0 auto;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    /* border-radius: 5px; */
+    background-color: white;
+    position: relative;
+}
+
+#friend-list {
+    position: absolute;
+    left:0;
+    top:0;
+    flex-grow: 1;
+    width: 155px;
+    height: 97%;
+    padding: 10px;
+    border-right: 1px solid #ccc;
+}
+
+#friend-list h2 {
+    margin: 0;
+    /* padding-bottom: 10px; */
+    padding: 1px;
+    /* border-bottom: 1px solid #ccc; */
+    text-align: center;
+    background-color: white;
+    position:absolute;
+
+}
+
+#friend-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#friend-list li {
+    cursor: pointer;
+    padding: 5px;
+    background-color: #fff;
+    border: none;
+    border-radius: 3px;
+    margin-bottom: 5px;
+}
+
+#friend-list li.selected {
+    background-color: #f2f2f2;
+}
+
+.add_person img {
+    width: 20px;
+    top: 25px;
+    left: 130px;
+    position: absolute;
+}
+.user img{
+    width: 30px;
+    top: 10px;
+    left: 10px;
+    position: absolute;
+}
+.friend{
+    position: relative;
+    margin-top: 60px;
+}
+.friend-button {
+    display: block;
+    width: 150px;
+    height: 50px;
+    margin-top: 10px;
+    /* margin-bottom: 10px; */
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+}
+.selected-friend-button {
+    display: block;
+    width: 150px;
+    height: 50px;
+    margin-top: 10px;
+    /* margin-bottom: 10px; */
+    background-color: #F3F6FB;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+}
+.friend-button::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #ccc;
+    opacity: 0.5;
+}
+
+.search-bar {
+    position: absolute;
+    top: 45px;
+    left: 0px;
+    width: 145px;
+    padding: 10px;
+    background-color: white;
+    border-bottom: 1px solid #ccc;
+}
+
+#message-area {
+    flex-grow: 2;
+    width: 812px;
+    height: 480px;
+    overflow-y: scroll;
+    margin: 10px;
+    padding: 5px;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    background-color: #F3F6FB;
+    position: absolute;
+    top: 50px;
+    left: 167px;
+}
+
+
+.search-bar input[type="text"] {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 13px;
+}
+
+.message {
+    margin-bottom: 10px;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.message.sender {
+    background-color: #cfe9ff;
+    text-align: right;
+    width: 40%; /* Adjust the width as per your preference */
+    margin-left: auto;
+    margin-right: 0;
+}
+
+.message.receiver {
+    background-color: #eaeaea;
+}
+
+.message .sender-name {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.message .message-content {
+    color: #333;
+}
+
+.input-container {
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center; */
+    height: 30px;
+    width: 800px;
+    padding: 10px;
+    position: absolute;
+    top: 550px;
+    left: 180px;
+    /* border-radius: 13px; */
+}
+
+.input-container input[type="text"] {
+    flex-grow: 1;
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-right: 5px;
+}
+
+.input-container input[type="submit"] {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+    background-color: #4CAF50;
+    color: #fff;
+    cursor: pointer;
+}
+
+::-webkit-scrollbar {
+    width: 10px; /* 스크롤바 너비 조정 */
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent; /* 스크롤바 트랙 배경색 설정 */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #bbb; /* 스크롤바 색상 설정 */
+    border-radius: 5px; /* 스크롤바 둥글게 처리 */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #999; /* 스크롤바 hover 시 색상 설정 */
+}
+
+.chat-search > .chat-search-img{
+    width: 30px;
+    height: 30px;
+    top: 12px;
+    left: 760px;
+    position: absolute;
+    object-fit: contain;
+}
+
+.chat-search {
+    position: absolute;
+    top: 0;
+    width: 770px;
+    padding: 10px;
+    left: 180px;
+    background-color: #fff;
+}
+
+.chat-search input[type="text"] {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #001C54;
+    border-radius: 18px;
+}
+
+.search-img img{
+    width: 18px;
+    height: 18px;
+    top: 14px;
+    left: 140px;
+    position: absolute;
+    object-fit: contain;
+    color: #D9D9D9;
+}
+
+/* --- 수정 */
+.add_person {
+    position: absolute;
+    top: -25px;
+    left: -15px;
+}
+.search-img img{
+    top: 5px;
+    left: 110px;
+    z-index: 1;
+}
+.search-bar {
+    width: 100%;
+}
+.selected-friend-button {
+    width: 100%;
+}
+.friend-button {
+    width: 100%;
+}
+.user img {
+    top: 0;
+}
+#friend-list .user {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 5px;
+}
+.input-container input[type="text"] {
+    height: 30px;
+}
+.input-container input[type="submit"] {
+    height: 30px;
+}
+.chat-search {
+    width: 800px;
+}
+.chat-search > .chat-search-img {
+    position: absolute;
+    z-index: 1;
+    top: 15px;
+    width: 25px;
+    height: 25px;
+    left: unset;
+    right: 20px;
+}
+#chat-container {
+    top: 100px;
+}
+header .container {
+    border-bottom: solid 1px #d9d9d9;
+}
