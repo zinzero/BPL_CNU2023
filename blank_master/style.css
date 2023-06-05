@@ -195,6 +195,48 @@ header > .container  > .hamburger > i {
     font-size: 20px;
 }
 
+/* ------------------ hashtag --------------------- */
+#hashtag {
+    top: 130px;
+    float: left;
+    height: 100px;
+    width: 100%;
+    background: #f5f5f5;
+}
+#hashtag > div {
+    top: 50%;
+    left: 50%;
+    float: left;
+    transform: translate(-50%, -50%);
+}
+#hashtag > div > .title {
+    float: left;
+    font-size: 20px;
+    line-height: 40px;
+    margin: 0 20px 0 0 ;
+    font-weight: bold;
+    color: #041552;
+}
+#hashtag > div > .labels {
+    float: left;
+}
+
+#hashtag > div > .labels > label {
+    padding: 5px 20px;
+    border-radius: 20px;
+    background: none;
+    border: solid 1px #041552;
+    color: #041552;
+    float: left;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+#hashtag > div > .labels > label.clicked {
+    background: #041552;
+    color: #fff;
+}
+
 /* ----------------- create note ---------------- */
 #create_note {
     margin-top: 150px;
@@ -300,9 +342,9 @@ header > .container  > .hamburger > i {
     border-radius: 5px;
     margin-bottom: 20px;
 }
-#main > .mainList > .mainItem:nth-child(3n) {
-    margin-right: 0;
-}
+/*#main > .mainList > .mainItem:nth-child(3n) {*/
+/*    margin-right: 0;*/
+/*}*/
 #main > .mainList > .mainItem > p:first-child {
     background: #041552;
     width: 120px;

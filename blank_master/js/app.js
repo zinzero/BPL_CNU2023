@@ -1,6 +1,7 @@
 class App {
     constructor() {
         this.solution = [];
+        this.hashtag();
         this.click_event();
         this.highlighter();
     }
@@ -8,8 +9,52 @@ class App {
     highlighter() {
         $(document).ready(function() {
             $('#note-view .content p').textHighlighter(false);
-            var hltr = $('#note-view .content p').getHighlighter();
+            let hltr = $('#note-view .content p').getHighlighter();
         });
+    }
+
+    hashtag() {
+
+        $(document).on("click", "#hashtag label", function () {
+            $(this).toggleClass("clicked");
+        })
+
+        $(document).ready(function () {
+            $("#hashtag input").change(function () {
+                let checked_list = $("#hashtag input:checked").map(function () {
+                    return $(this).val();
+                }).get();
+
+                if (checked_list.length > 0) {
+                    $("#main .mainList .mainItem").hide();
+                    $("#main .mainList .mainItem.newItem").show();
+
+                    $("#main .mainList .mainItem").each(function () {
+                        let item = $(this);
+                        let item_hash = item.find(".hash span");
+                        let item_tags = [];
+
+                        item_hash.each(function () {
+                            let hash = $(this).text().substring(1); // '#' 제거
+                            item_tags.push(hash);
+                        });
+
+                        let show_item = checked_list.every(function (tag) {
+                            return item_tags.includes(tag);
+                        });
+
+                        if (show_item) {
+                            item.show();
+                        } else {
+                            item.hide();
+                        }
+                    });
+                } else {
+                    $("#main .mainList .mainItem").show();
+                }
+            });
+        });
+
     }
 
     click_event() {
@@ -21,6 +66,7 @@ class App {
             $("#ham .cancel").on("click", function () {
                 $("#ham").hide(200);
             });
+
 
             // note view modify
             let txt = $("#note-view h1").text();
