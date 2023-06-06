@@ -1,54 +1,5 @@
-@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
-* {position: relative}
-
-body {
-    font-family: 'Nanum Gothic', sans-serif;
-    margin: 0 auto;
-    height: 100%;
-}
-button {cursor: pointer;}
-textarea {font-family: 'NanumGothic';}
-input:focus, textarea:focus {outline: none;}
-
-.container {
-    width: 1200px;
-    float: left;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-header {
-    position: fixed;
-    z-index: 99;
-    background: #fff;
-    width: 100%;
-    left: 50%;
-    height: 80px;
-    transform: translateX(-50%);
+header .container {
     border-bottom: solid 1px #d9d9d9;
-}
-header > .container {
-    height: 100%;
-}
-header > .container > .logo {
-    width: 150px;
-    height: 100%;
-    float: left;
-}
-header > .container > .logo > a > img {
-    width: 100%;
-    top: 50%;
-    transform: translateY(-50%);
-}
-header > .container > .menu {
-    height: 100%;
-    float: right;
-}
-header > .container  > .menu > a {
-    top: 40%;
-    margin-left: 20px;
-    color: black;
-    text-decoration-line : none;
 }
 
 .note-view {
@@ -67,20 +18,12 @@ header > .container  > .menu > a {
 }
 
 .note-view > .tag_box > button {
-    padding: 0 20px;
+    padding: 3px 20px;
+    margin-right: 10px;
+    background: #f1f1f1;
+    border-radius: 20px;
     border: none;
-    background-color: #041552;
-    color: #fff;
-    border-radius: 50px;
-    height: 27px;
-    margin-bottom: 20px;
 }
-
-/*.note-view-stork {*/
-/*    width: 100%;*/
-/*    border-bottom: solid 1px #d9d9d9;*/
-/*}*/
-
 
 /* gyuri */
 #note-view > .content > p {
@@ -103,6 +46,7 @@ header > .container  > .menu > a {
     padding: 10px 40px;
     float: right;
     margin-left: 20px;
+    border-radius: 10px;
 }
 #note-view .note-quiz-problem {
     background: #d9d9d9;
