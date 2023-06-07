@@ -309,7 +309,23 @@ header > .container  > .hamburger > i {
     float: right;
     border-radius: 10px;
 }
-
+.tagify__tag > div {
+    padding: 0 20px;
+    border: none;
+    background: #f1f1f1;
+    border-radius: 50px;
+    height: 25px;
+    line-height: 25px;
+}
+.tagify{
+    width: 100%;
+    float: left;
+    border-radius: 5px;
+}
+.tagify__input {
+    font-weight: 900;
+    font-size: 18px;
+}
 /* =================== main =================*/
 #main {
     margin-top: 150px;

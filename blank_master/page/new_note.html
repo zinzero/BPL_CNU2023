@@ -6,6 +6,9 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Blank Master</title>
+    <script src="https://cdn.jsdelivr.net/npm/@yaireo/tagify"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@yaireo/tagify/dist/tagify.polyfills.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/@yaireo/tagify/dist/tagify.css" rel="stylesheet" type="text/css" />
     <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-gothic.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../style.css">
@@ -47,12 +50,7 @@
     <div id="create_note" class="container">
         <input type="text" placeholder="제목 입력">
         <div class="hashtag">
-            <input type="text" placeholder="해시태그 입력">
-            <div class="tag_box">
-                <button>#기초프로젝트랩</button>
-                <button>#javascript</button>
-                <button>#html</button>
-            </div>
+            <input type="text" name="hashtag" placeholder="해시태그 입력">
         </div>
 
         <textarea name="create_note" id="create_note_ta" placeholder="내용을 입력하세요."></textarea>
@@ -64,3 +62,9 @@
     </div>
 </body>
 </html>
+
+
+<script>
+    let input = document.querySelector('input[name=hashtag]');
+    new Tagify(input);
+</script>

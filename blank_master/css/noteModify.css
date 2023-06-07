@@ -80,6 +80,7 @@ header .container {
     border: solid 1px #d9d9d9;
     border-radius: 5px;
     height: 30px;
+    width: 800px;
     padding: 0 15px;
 }
 #note-view > .problems > .problem-item > i {
@@ -87,6 +88,7 @@ header .container {
     line-height: 30px;
     font-size: 30px;
     margin-left: 10px;
+    float: left;
 }
 #note-view > .problems > .problem-item > i.fa-x {
     color: #e03131;
@@ -99,4 +101,14 @@ header .container {
     background: #fff;
     color: rgb(65, 191, 146);
     border: solid 1px rgb(65, 191, 146);
+}
+#note-view > .problems > .problem-item > i.delete-btn {
+    color: #999;
+    font-size: 20px;
+    margin-left: 20px;
+    cursor: pointer;
+    float: right;
+}
+#note-view > .problems > .problem-item > i.delete-btn:hover {
+    color: #e03131;
 }

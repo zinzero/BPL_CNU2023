@@ -13,6 +13,7 @@ class App {
         });
     }
 
+
     hashtag() {
 
         $(document).on("click", "#hashtag label", function () {
@@ -83,7 +84,8 @@ class App {
                         <div class="problem-item">
                             <p>${idx+1}번 문제</p>
                             <input type="text" placeholder="답을 입력해주세요.">
-                            <button data-idx='${idx}' class="problem-item-check">채점하기</button>
+                            <button data-idx='${idx}' class="problem-item-check">채점</button>
+<!--                            <i class="fa-solid fa-delete-left delete-btn"></i>-->
                         </div>
                     `);
                 });
