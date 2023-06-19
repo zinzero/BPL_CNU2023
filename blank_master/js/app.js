@@ -1,9 +1,53 @@
 class App {
     constructor() {
         this.solution = [];
+        this.main_init();
+        this.note_view();
         this.hashtag();
         this.click_event();
         this.highlighter();
+    }
+
+    main_init() {
+        let note_list = JSON.parse(localStorage.getItem("note_list"));
+
+        $(document).ready(function () {
+            $("#main .mainList").empty();
+            $("#main .mainList").append(`
+                <div class="mainItem newItem">
+                    <a href="page/new_note.html"><i class="fa-sharp fa-solid fa-plus"></i></a>
+                </div>
+            `);
+
+            if (note_list) {
+                this.note_list = note_list;
+                    $(this.note_list).each(function (idx, el) {
+                        let hashContainer = $('<div class="hash">');
+                        // let hashContainer = $('<div class="hash">');
+
+                        $.each(el.tags, function(tagIdx, tag) {
+                            let tagSpan = $('<span>').text(tag);
+                            hashContainer.append(tagSpan);
+                        });
+                        $("#main .mainList").append(`
+                            <div class="mainItem">
+                                <p><i class="fa-solid fa-circle-check"></i> 문제 생성완료</p>
+                                <button class="pin">
+                                    <i class="fa-solid fa-thumbtack"></i>
+                                </button>
+                                <a href="" class="title">${el.title}</a>
+                                <p class="date">2023.04.17</p>
+                       `);
+                        $("#main .mainList .mainItem:last-child").append(hashContainer);
+                        $("#main .mainList .mainItem:last-child").append(`
+                            <a href="page/noteView.html?idx=${idx}" id="main_note_view_btn">
+                                    필기로 바로가기 <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+                            </div>
+                       `);
+                    })
+            }
+        });
     }
 
     highlighter() {
@@ -12,7 +56,6 @@ class App {
             let hltr = $('#note-view .content p').getHighlighter();
         });
     }
-
 
     hashtag() {
 
@@ -58,7 +101,63 @@ class App {
 
     }
 
+    create_note = (e) => {
+        let note_list = JSON.parse(localStorage.getItem("note_list"));
+
+        let title = $(e.target).parents("#create_note").find("input[name='title']").val();
+        let contents = $(e.target).parents("#create_note").find("textarea").val();
+        let tagify_tag = $(e.target).parents("#create_note").find(".tagify .tagify__tag-text");
+        let tags = [];
+        tagify_tag.each(function (idx, el) {
+            let hash = $(el).text();
+            tags.push(hash);
+        });
+
+        let new_note = {
+            title : title,
+            contents : contents,
+            tags : tags
+        };
+
+        if (note_list) {
+            this.note_list = note_list;
+            this.note_list.push(new_note);
+        } else {
+            this.note_list = [new_note];
+        }
+        localStorage.setItem("note_list", JSON.stringify(this.note_list));
+        location.href = '../index.html';
+    }
+
+    note_view() {
+        function getParameter(name) {
+            name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+            let regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+                results = regex.exec(location.search);
+            return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+        }
+
+        let note_list = JSON.parse(localStorage.getItem("note_list"));
+        let idx = getParameter("idx");
+
+        if (note_list) {
+            $(document).ready(function () {
+                $("#note-view").find("h1").text(note_list[idx].title);
+                $("#note-view").find("#note-view-content-p").text(note_list[idx].contents);
+                $("#note-view .tag_box button").remove();
+                $(note_list[idx].tags).each(function (idx, el) {
+                    $("#note-view .tag_box").append(`
+                        <button>#${el}</button>
+                    `);
+                });
+                $("#note-view").find("#note-view-content-p").text(note_list[idx].contents);
+            })
+        }
+    }
+
     click_event() {
+        $(document).on("click", "#create_note_btn", this.create_note);
+
         $(document).ready(function() {
             // hamburger menu toggle
             $(".hamburger i").click(function () {
@@ -67,7 +166,6 @@ class App {
             $("#ham .cancel").on("click", function () {
                 $("#ham").hide(200);
             });
-
 
             // note view modify
             let txt = $("#note-view h1").text();
@@ -109,6 +207,7 @@ class App {
                     `);
                 }
             });
+
         });
     };
 }
